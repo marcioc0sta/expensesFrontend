@@ -11,9 +11,10 @@
         />
     </head>
     <body>
+        <h2 class="app-name">Meus Gastos</h2>
         <div class="container" id="container">
             <div class="form-container sign-up">
-                <form>
+                <form method="post">
                     <h1>Criar conta</h1>
 
                     <input type="text" placeholder="Nome" />
@@ -23,11 +24,11 @@
                 </form>
             </div>
             <div class="form-container sign-in">
-                <form>
+                <form id="login-form" method="POST">
                     <h1>Entrar</h1>
 
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Senha" />
+                    <input id="login-email" type="email" placeholder="Email" />
+                    <input id="login-password" type="password" placeholder="Senha" />
                     <a href="#">Esqueceu a senha?</a>
                     <button>Entrar</button>
                 </form>

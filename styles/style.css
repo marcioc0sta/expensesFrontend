@@ -28,6 +28,10 @@ body {
     min-height: 480px;
 }
 
+.app-name {
+    margin-bottom: 32px;
+}
+
 .container p {
     font-size: 14px;
     line-height: 20px;
