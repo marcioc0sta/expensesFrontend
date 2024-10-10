@@ -25,6 +25,7 @@ async function SubmitLogin () {
     if (data.error) {
         alert(data.error);
     } else {
+        window.location.href = '/dashboard.html';
         localStorage.setItem('userData', JSON.stringify(data));
     }
 };
