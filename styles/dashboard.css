@@ -41,7 +41,13 @@ button {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+button:hover {
     cursor: pointer;
+    background-color: #7f63c0;
+    transition: all 0.3s;
 }
 
 .history{
