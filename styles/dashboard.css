@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrant", sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    margin: 20px 0;
+    padding: 16px;
+}
+
+.gastos-container{
+    float: right;
+    padding-right: 5px;
+    margin: 5px;
+}
+
+button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.history{
+    float: right;
+    color: #512da8;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.mes{
+    padding: 0;
+    font-size: 20px;
+    margin: 16px 0;
+}
+
+.span-container{
+    letter-spacing: 0.5px;
+    font-size: 20px;
+    display: flex;
+    margin: 32px 0;
+}
+
+.expenses {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.expenses .expense-card {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    padding: 30px;
+    justify-content: center;
+    text-align: center;
+    width: calc(33% - 16px);
+    margin: 16px 0;
+}
+
+
+.expenses .expense-card .fa, .expenses .expense-card .value {
+    width: 100%;
+}
+
+.expenses .expense-card .fa {
+    font-size: 24px;
+    color: #7f63c0;
+    margin-bottom: 18px;
+}
+
+.expenses .expense-card .value {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.actions {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
