@@ -56,22 +56,22 @@ async function getExpensesByMonth() {
     Object.entries(data).forEach(([key, value]) => {
       switch (key) {
         case expenseCategories[1]:
-          cat01V.innerHTML = `R$ ${formatMoney(value?.total)}`; 
+          cat01V.innerHTML = `${formatMoney(value?.total)}`; 
           break;
         case expenseCategories[2]:
-          cat02V.innerHTML = `R$ ${formatMoney(value.total)}`;
+          cat02V.innerHTML = `${formatMoney(value.total)}`;
           break;
         case expenseCategories[3]:
-          cat03V.innerHTML = `R$ ${formatMoney(value.total)}`;
+          cat03V.innerHTML = `${formatMoney(value.total)}`;
           break;
         case expenseCategories[4]:
-          cat04V.innerHTML = `R$ ${formatMoney(value.total)}`;
+          cat04V.innerHTML = `${formatMoney(value.total)}`;
           break;
         case expenseCategories[5]:
-          cat05V.innerHTML = `R$ ${formatMoney(value.total)}`;
+          cat05V.innerHTML = `${formatMoney(value.total)}`;
           break;
         case expenseCategories[6]:
-          cat06V.innerHTML = `R$ ${formatMoney(value.total)}`;
+          cat06V.innerHTML = `${formatMoney(value.total)}`;
           break
       default:
         break;
