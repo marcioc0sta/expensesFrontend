@@ -1,5 +1,4 @@
-// const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
-const API_URL = 'http://localhost:8080';
+const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
 
 // HTML ELEMENTS
 const container = document.getElementById('container');
