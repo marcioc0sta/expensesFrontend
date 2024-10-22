@@ -90,6 +90,30 @@ body {
     outline: none;
 }
 
+.container .error, .container .signup-error {
+    display: none;
+    color: #ff0000;
+    font-size: 12px;
+    margin: 5px 0 0;
+    width: 100%;
+}
+
+.container .error.active, .container .signup-error.active {
+    display: block;
+}
+
+.container .signup-success {
+    display: none;
+    color: #168716;
+    font-size: 12px;
+    margin: 5px 0 0;
+    width: 100%;
+}
+
+.container .signup-success.active {
+    display: block;
+}
+
 .form-container {
     position: absolute;
     top: 0;

@@ -14,12 +14,14 @@
         <h2 class="app-name">Meus Gastos</h2>
         <div class="container" id="container">
             <div class="form-container sign-up">
-                <form method="post">
+                <form id="signup-form" method="post">
                     <h1>Criar conta</h1>
 
-                    <input type="text" placeholder="Nome" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Senha" />
+                    <input id="signup-name" type="text" placeholder="Nome" />
+                    <input id="signup-email" type="email" placeholder="Email" />
+                    <input id="signup-password" type="password" placeholder="Senha" />
+                    <p id="signup-error" class="signup-error"></p>
+                    <p id="signup-success" class="signup-success"></p>
                     <button>Cadastrar</button>
                 </form>
             </div>
@@ -29,6 +31,7 @@
 
                     <input id="login-email" type="email" placeholder="Email" />
                     <input id="login-password" type="password" placeholder="Senha" />
+                    <p id="error" class="error">Login ou senha inválidos</p>
                     <a href="#">Esqueceu a senha?</a>
                     <button>Entrar</button>
                 </form>
