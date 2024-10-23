@@ -37,6 +37,7 @@ const cat03V = document.getElementById('cat-03-value');
 const cat04V = document.getElementById('cat-04-value');
 const cat05V = document.getElementById('cat-05-value');
 const cat06V = document.getElementById('cat-06-value');
+const newEntry = document.getElementById('new-entry');
 
 if (userData) {
     title.innerHTML = `Olá ${userData.name}`;
@@ -83,3 +84,9 @@ async function getExpensesByMonth() {
 }
 
 getExpensesByMonth();
+
+
+// PAGE EVENTS
+newEntry.addEventListener('click', () => {
+    window.location.href = '/newEntry.html';
+});
