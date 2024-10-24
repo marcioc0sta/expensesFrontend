@@ -77,7 +77,7 @@ function calculateBalance() {
 
   if (balanceValue < 0) {
     console.log('menor')
-    balance.innerHTML = 'Cadastre seu salario';
+    balance.innerHTML = '--';
     return
   }
 
