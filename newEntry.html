@@ -10,23 +10,25 @@
 <body>
   <div class="container">
     <h2>Insira os dados do seu gasto</h2>
-    <form method="post">
+    <form id="entry-form" method="post">
       <div class="formgroup">
-        <label>Data</label>
-        <input id="date" type="text">
+        <label>Data <span>*</span></label>
+        <input id="date" placeholder="00/00/0000" type="text">
       </div>
       <div class="formgroup">
-        <label>Descrição</label>
-        <input id="description" type="text">
+        <label>Descrição <span>*</span></label>
+        <input id="description" placeholder="Adicione uma descrição" type="text">
       </div>
       <div class="formgroup">
-        <label>Categoria</label>
+        <label>Categoria <span>*</span></label>
         <select name="categories" id="categories"></select>
       </div>
       <div class="formgroup">
-        <label>Valor</label>
-        <input id="value" step=".01" type="number">
+        <label>Valor <span>*</span></label>
+        <input id="value" step=".01" type="number" placeholder="R$ 0.00">
       </div>
+      <p id="success-message" class="success-message">Entrada de gastos criada com sucesso</p>
+      <p id="error" class="error-message"></p>
       <div class="formgroup">
         <button id="submit" type="submit">Cadastrar entrada de gastos</button>
       </div>
