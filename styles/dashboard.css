@@ -31,7 +31,7 @@ body {
     margin: 5px;
 }
 
-button {
+.actions button {
     background-color: #512da8;
     color: #fff;
     font-size: 12px;
@@ -44,20 +44,29 @@ button {
     transition: all 0.3s;
 }
 
-button:hover {
+.actions button:hover {
     cursor: pointer;
     background-color: #7f63c0;
     transition: all 0.3s;
 }
 
-button.logout {
+.logout {
+    border: none;
     background: none;
     color: #7e8089;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
     margin-top: 16px;
     padding: 0
 }
 
-button.logout span {
+.logout:hover {
+    cursor: pointer;
+    color: #512da8;
+}
+
+.logout span {
     margin-right: 8px;
 }
 
@@ -124,4 +133,45 @@ button.logout span {
     display: flex;
     justify-content: space-between;
     margin-bottom: 36px;
+}
+
+.title-box {
+    align-items: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.title-box .avatar {
+    background-color: #717171;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+}
+
+.title-box .preferences {
+    background-color: #717171;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+    position: absolute;
+    z-index: 999;
+}
+
+.title-box .preferences:hover {
+    cursor: pointer;
 }

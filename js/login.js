@@ -1,4 +1,5 @@
-const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
+// const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
+const API_URL = 'http://localhost:8080';
 
 function urlPush (url) {
 const currentUrl = window.location.href;
@@ -37,12 +38,14 @@ async function SubmitLogin () {
 
     const data = await response.json();
 
+    console.log(data)
+
     if (data.error) {
         error.classList.add('active');
         console.log(data.error);
     } else {
-        urlPush('dashboard');
         localStorage.setItem('userData', JSON.stringify(data));
+        urlPush('dashboard');
     }
 };
 

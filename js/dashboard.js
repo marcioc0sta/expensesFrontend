@@ -46,6 +46,8 @@ const cat05V = document.getElementById('cat-05-value');
 const cat06V = document.getElementById('cat-06-value');
 const newEntry = document.getElementById('new-entry');
 const logout = document.getElementById('logout');
+const avatar = document.getElementById('avatar');
+const preferences = document.getElementById('preferences');
 
 if (userData) {
     title.innerHTML = `Olá ${userData.name}`;
@@ -93,6 +95,15 @@ async function getExpensesByMonth() {
 
 getExpensesByMonth();
 
+function populateAvatar() {
+  const nameInitial = userData.name.split(' ').map(name => name[0]).join('')
+  const lastnameInitial = userData.last_name.split(' ').map(name => name[0]).join('');
+  const userInitials = `${nameInitial}${lastnameInitial}`;
+  avatar.innerHTML = userInitials;
+}
+
+
+populateAvatar();
 
 // PAGE EVENTS
 newEntry.addEventListener('click', () => {
@@ -102,4 +113,16 @@ newEntry.addEventListener('click', () => {
 logout.addEventListener('click', () => {
     localStorage.removeItem('userData');
     urlPush('index');
+});
+
+avatar.addEventListener('mouseover', () => {
+  preferences.style.display = 'block';
+});
+
+preferences.addEventListener('mouseleave', () => {
+  preferences.style.display = 'none';
+});
+
+preferences.addEventListener('click', () => {
+  urlPush('preferences');
 });
