@@ -75,6 +75,12 @@ function calculateBalance() {
   const balanceValue = userData.user_income - total;
   const halfIncome = userData.user_income / 2;
 
+  if (balanceValue < 0) {
+    console.log('menor')
+    balance.innerHTML = 'Cadastre seu salario';
+    return
+  }
+
   if (balanceValue < halfIncome) {
     balance.style.color = '#c14d4d';
   } else {
@@ -125,7 +131,7 @@ getExpensesByMonth();
 
 function populateAvatar() {
   const nameInitial = userData.name.split(' ').map(name => name[0]).join('')
-  const lastnameInitial = userData.last_name.split(' ').map(name => name[0]).join('');
+  const lastnameInitial = userData.last_name ? userData.last_name.split(' ').map(name => name[0]).join('') : '';
   const userInitials = `${nameInitial}${lastnameInitial}`;
   avatar.innerHTML = userInitials;
 }
