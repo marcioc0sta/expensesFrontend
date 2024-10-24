@@ -139,7 +139,6 @@ body {
     align-items: center;
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
     position: relative;
 }
 
@@ -174,4 +173,36 @@ body {
 
 .title-box .preferences:hover {
     cursor: pointer;
+}
+
+.income {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.income .fa {
+    margin-right: 8px;
+    color: #717171;
+}
+
+.income p {
+    font-size: 16px;
+    margin-right: 8px;
+    width: 100%;
+}
+
+.income .number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
 }

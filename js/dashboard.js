@@ -48,6 +48,9 @@ const newEntry = document.getElementById('new-entry');
 const logout = document.getElementById('logout');
 const avatar = document.getElementById('avatar');
 const preferences = document.getElementById('preferences');
+const totalIncome = document.getElementById('total-income');
+const balance = document.getElementById('balance');
+let total = 0;
 
 if (userData) {
     title.innerHTML = `Olá ${userData.name}`;
@@ -59,10 +62,35 @@ function formatMoney(value) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 }
 
+function calculateTotal(data) {
+  
+  data.reduce((acc, [key, value]) => {
+    total += Number(value.total);
+  }, 0);
+
+  totalIncome.innerHTML = `${formatMoney(total)}`;
+}
+
+function calculateBalance() {
+  const balanceValue = userData.user_income - total;
+  const halfIncome = userData.user_income / 2;
+
+  if (balanceValue < halfIncome) {
+    balance.style.color = '#c14d4d';
+  } else {
+    balance.style.color = '#4dc1c1';
+  }
+
+  balance.innerHTML = `${formatMoney(balanceValue)}`;
+}
+
 async function getExpensesByMonth() {
   try {
     const response = await fetch(`${API_URL}/expenses/${userData.id}/${currentMonth}`);
     const data = await response.json();
+
+    calculateTotal(Object.entries(data));
+    calculateBalance();
 
     Object.entries(data).forEach(([key, value]) => {
       switch (key) {
