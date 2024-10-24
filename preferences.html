@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/newEntry.css">
+  <script src="https://kit.fontawesome.com/e98c65f79b.js" crossorigin="anonymous"></script>
+  <title>Dados do usuário</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Atualize seus dados</h2>
+    <form id="preferences-form" method="post">
+      <div class="formgroup">
+        <label>Nome <span>*</span></label>
+        <input id="name" placeholder="" type="text">
+      </div>
+      <div class="formgroup">
+        <label>Sobrenome </label>
+        <input id="last-name" placeholder="" type="text">
+      </div>
+      <div class="formgroup">
+        <label>Email <span>*</span></label>
+        <input id="email" placeholder="" type="email">
+      </div>
+      <div class="formgroup">
+        <label>Valor da sua renda mensal <span>*</span></label>
+        <input id="income" step=".01" type="number" placeholder="R$ 0.00">
+      </div>
+      <p id="success-message" class="success-message">Dados atualizados com sucesso</p>
+      <p id="error" class="error-message"></p>
+      <div class="formgroup actions">
+        <button id="submit" type="submit">Atualizar meus dados</button>
+        <a id="back"> <span class="fa fa-caret-left"></span> Voltar</a>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="js/preferences.js"></script>
+</body>
+</html>

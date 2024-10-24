@@ -78,7 +78,7 @@ function calculateBalance() {
   if (balanceValue < halfIncome) {
     balance.style.color = '#c14d4d';
   } else {
-    balance.style.color = '#4dc1c1';
+    balance.style.color = '#218b20';
   }
 
   balance.innerHTML = `${formatMoney(balanceValue)}`;

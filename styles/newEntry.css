@@ -113,3 +113,9 @@ form button:hover {
   margin: 16px 0;
   display: block;
 }
+
+#back:hover {
+  cursor: pointer;
+  color: #512da8;
+  text-decoration: none;
+}
