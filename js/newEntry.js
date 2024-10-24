@@ -2,6 +2,13 @@ const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
 
 const userData = JSON.parse(localStorage.getItem('userData'));
 
+function urlPush (url) {
+  const currentUrl = window.location.href;
+  const currentPage = currentUrl.split('/').pop();
+  const replace = currentUrl.replace(currentPage, `${url}.html`);
+  window.location.href = replace;
+}
+
 // HTML ELEMENTS
 const categoriesSelect = document.getElementById('categories');
 const dateInput = document.getElementById('date');
@@ -10,6 +17,7 @@ const valueInput = document.getElementById('value');
 const successMessage = document.getElementById('success-message');
 const form = document.getElementById('entry-form');
 const error = document.getElementById('error');
+const back = document.getElementById('back');
 
 
 function populateCategoriesSelect(categories) {
@@ -156,3 +164,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     createEntry();
 });
+
+back.addEventListener('click', () => {
+  urlPush('dashboard');
+})

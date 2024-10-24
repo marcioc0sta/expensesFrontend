@@ -1,5 +1,12 @@
 const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
 
+function urlPush (url) {
+  const currentUrl = window.location.href;
+  const currentPage = currentUrl.split('/').pop();
+  const replace = currentUrl.replace(currentPage, `${url}.html`);
+  window.location.href = replace;
+}
+
 const months = {
     0: 'Janeiro',
     1: 'Fevereiro',
@@ -25,7 +32,7 @@ const expenseCategories = {
 }
 
 const currentDate = new Date();
-const currentMonth = currentDate.getMonth();
+const currentMonth = currentDate.getMonth() + 1;
 const userData = JSON.parse(localStorage.getItem('userData'));
 
 // HTML ELEMENTS
@@ -38,6 +45,7 @@ const cat04V = document.getElementById('cat-04-value');
 const cat05V = document.getElementById('cat-05-value');
 const cat06V = document.getElementById('cat-06-value');
 const newEntry = document.getElementById('new-entry');
+const logout = document.getElementById('logout');
 
 if (userData) {
     title.innerHTML = `Olá ${userData.name}`;
@@ -88,5 +96,10 @@ getExpensesByMonth();
 
 // PAGE EVENTS
 newEntry.addEventListener('click', () => {
-    window.location.href = '/newEntry.html';
+    urlPush('newEntry');
+});
+
+logout.addEventListener('click', () => {
+    localStorage.removeItem('userData');
+    urlPush('index');
 });

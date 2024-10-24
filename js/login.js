@@ -1,5 +1,13 @@
 const API_URL = 'http://ec2-50-19-19-195.compute-1.amazonaws.com';
 
+function urlPush (url) {
+const currentUrl = window.location.href;
+const currentPage = currentUrl.split('/').pop();
+const replace = currentUrl.replace(currentPage, `${url}.html`);
+window.location.href = replace;
+}
+
+
 // HTML ELEMENTS
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');
@@ -33,7 +41,7 @@ async function SubmitLogin () {
         error.classList.add('active');
         console.log(data.error);
     } else {
-        window.location.href = '/dashboard.html';
+        urlPush('dashboard');
         localStorage.setItem('userData', JSON.stringify(data));
     }
 };

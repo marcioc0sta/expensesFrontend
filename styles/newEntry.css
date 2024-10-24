@@ -58,6 +58,18 @@ form button:hover {
   margin-bottom: 16px;
 }
 
+.formgroup.actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formgroup.actions a {
+  color: #512da8;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .formgroup label {
   color: #333;
   display: block;

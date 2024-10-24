@@ -50,6 +50,17 @@ button:hover {
     transition: all 0.3s;
 }
 
+button.logout {
+    background: none;
+    color: #7e8089;
+    margin-top: 16px;
+    padding: 0
+}
+
+button.logout span {
+    margin-right: 8px;
+}
+
 .history{
     float: right;
     color: #512da8;
@@ -112,5 +123,5 @@ button:hover {
     align-items: center;
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 36px;
 }
