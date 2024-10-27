@@ -67,6 +67,18 @@
         <a id="back"> <span class="fa fa-caret-left"></span> Voltar</a>
     </div>
 </div>
+<div id="modal-overlay" class="modal-overlay">
+    <div id="delete-modal" class="delete-modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <p>Tem certeza que deseja excluir <span id="entry-name"></span>?</p>
+            <div class="modal-buttons">
+                <button class="btn-default" id="cancel">Cancelar</button>
+                <button class="btn-danger" id="delete-expense">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="js/entries.js"></script>
 </body>
 </html>

@@ -18,6 +18,11 @@ const yearFilter = document.getElementById('year');
 const tableContent = document.getElementById('table-content');
 const totalExpenses = document.getElementById('total-expenses');
 const back = document.getElementById('back');
+const overlay = document.getElementById('modal-overlay');
+const closeModal = document.getElementById('close-modal');
+const entryName = document.getElementById('entry-name');
+const cancel = document.getElementById('cancel');
+const deleteExpenseBtn = document.getElementById('delete-expense');
 
 const currentDate = new Date();
 const currentMonth = currentDate.getMonth() + 1;
@@ -51,6 +56,11 @@ function calculateTotalExpenses (data) {
   }, 0);
 }
 
+function saveExpenseAndPushToEdit (expense) {
+  localStorage.setItem('expenseData', expense);
+  urlPush('editEntry');
+}
+
 async function getEntriesByYearAndMonth () {
   try {
     const response = await fetch(`${API_URL}/expenses/${userData.id}/${yearFilter.value}/${monthFilter.value}`);
@@ -68,8 +78,12 @@ async function getEntriesByYearAndMonth () {
             <td>${category.name}</td>
             <td>${formatMoney(item.value)}</td>
             <td class="actions">
-                <button title="editar" class="btn btn-sm btn-primary"><span class="fa fa-pencil"></span></button>
-                <button title="exlcuir" class="btn btn-sm btn-danger"><span class="fa fa-trash"></span></button>
+                <button data-item="${item.id}" id="edit-${item.id}" title="editar" class="btn btn-sm btn-primary">
+                    <span data-item="${item.id}" id="edit-${item.id}" class="fa fa-pencil"></span>
+                </button>
+                <button data-item-name="${item.description}" data-item="${item.id}" id="delete-${item.id}" title="exlcuir" class="btn btn-sm btn-danger">
+                    <span data-item-name="${item.description}" data-item="${item.id}" id="delete-${item.id}" class="fa fa-trash"></span>
+                </button>
             </td>
           </tr>
         `);
@@ -82,6 +96,18 @@ async function getEntriesByYearAndMonth () {
   } catch (error) {
     console.log(error);
   }
+}
+
+function deleteExpense (expense) {
+  fetch(`${API_URL}/expenses/${expense}`, {
+    method: 'DELETE',
+    body: JSON.stringify({ userId: userData.id }),
+  })
+  .then(() => {
+    overlay.classList.remove('show');
+    window.location.reload();
+  })
+  .catch(console.log);
 }
 
 currentDateFilters();
@@ -102,4 +128,32 @@ yearFilter.addEventListener('change', async () => {
 back.addEventListener('click', () => {
   urlPush('dashboard');
 })
+document.addEventListener('click', async (event) => {
+  const target = event.target;
 
+  if (target.id === `edit-${target.getAttribute('data-item')}`) {
+    const expense = target.getAttribute('data-item');
+    saveExpenseAndPushToEdit(expense);
+  }
+  if (target.id === `delete-${target.getAttribute('data-item')}`) {
+    const expense = target.getAttribute('data-item');
+    overlay.classList.add('show');
+    entryName.innerHTML = target.getAttribute('data-item-name');
+    localStorage.setItem('expenseData', expense);
+  }
+});
+overlay.addEventListener('click', (event) => {
+  if (event.target === overlay) {
+    overlay.classList.remove('show');
+  }
+})
+closeModal.addEventListener('click', (event) => {
+  overlay.classList.remove('show');
+})
+cancel.addEventListener('click', (event) => {
+  overlay.classList.remove('show');
+})
+deleteExpenseBtn.addEventListener('click', (event) => {
+  const expense = localStorage.getItem('expenseData');
+  deleteExpense(expense);
+})

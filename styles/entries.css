@@ -136,3 +136,97 @@ tfoot #total-expenses {
 #back:hover {
     cursor: pointer;
 }
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    align-items: center;
+    display: flex;
+}
+
+.delete-modal {
+    background-color: #fff;
+    border-radius: 8px;
+    /*display: none;*/
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.close {
+    background-color: #a1a1a1;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    height: 24px;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 24px;
+    text-align: center;
+}
+
+.modal-content .modal-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.modal-content .btn-default {
+    background: none;
+    border: solid 1px #a1a1a1;
+    font-size: 12px;
+    padding: 10px 45px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 50%;
+}
+
+.modal-content .btn-default:hover {
+    background-color: #a1a1a1;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-content .btn-danger {
+    background-color: #ff5c5c;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 50%;
+}
+
+.modal-content .btn-danger:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+

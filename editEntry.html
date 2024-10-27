@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/newEntry.css">
+    <script src="https://kit.fontawesome.com/e98c65f79b.js" crossorigin="anonymous"></script>
+    <title>Editar gasto</title>
+</head>
+<body>
+<div class="container">
+    <h2>Edite seu gasto</h2>
+    <form id="entry-form" method="post">
+        <div class="formgroup">
+            <label>Data <span>*</span></label>
+            <input id="date" placeholder="00/00/0000" type="text">
+        </div>
+        <div class="formgroup">
+            <label>Descrição <span>*</span></label>
+            <input id="description" placeholder="Adicione uma descrição" type="text">
+        </div>
+        <div class="formgroup">
+            <label>Categoria <span>*</span></label>
+            <select name="categories" id="categories"></select>
+        </div>
+        <div class="formgroup">
+            <label>Valor <span>*</span></label>
+            <input id="value" step=".01" type="number" placeholder="R$ 0.00">
+        </div>
+        <p id="success-message" class="success-message">Entrada de gastos editada com sucesso</p>
+        <p id="error" class="error-message"></p>
+        <div class="formgroup actions">
+            <button id="submit" type="submit">Cadastrar entrada de gastos</button>
+            <a id="back"> <span class="fa fa-caret-left"></span> Voltar</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="js/editEntry.js"></script>
+</body>
+</html>

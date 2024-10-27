@@ -33,6 +33,7 @@ const expenseCategories = {
 
 const currentDate = new Date();
 const currentMonth = currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
 const userData = JSON.parse(localStorage.getItem('userData'));
 
 // HTML ELEMENTS
@@ -93,7 +94,7 @@ function calculateBalance() {
 
 async function getExpensesByMonth() {
   try {
-    const response = await fetch(`${API_URL}/expenses/${userData.id}/${currentMonth + 1}`);
+    const response = await fetch(`${API_URL}/expenses/${userData.id}/${currentYear}/${currentMonth + 1}`);
     const data = await response.json();
 
     calculateTotal(Object.entries(data));
