@@ -4,11 +4,20 @@ function formatMoney(value) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 }
 
+function urlPush (url) {
+  const currentUrl = window.location.href;
+  const currentPage = currentUrl.split('/').pop();
+  const replace = currentUrl.replace(currentPage, `${url}.html`);
+  window.location.href = replace;
+}
+
+
 // HTML ELEMENTS
 const monthFilter = document.getElementById('month');
 const yearFilter = document.getElementById('year');
 const tableContent = document.getElementById('table-content');
 const totalExpenses = document.getElementById('total-expenses');
+const back = document.getElementById('back');
 
 const currentDate = new Date();
 const currentMonth = currentDate.getMonth() + 1;
@@ -90,3 +99,7 @@ yearFilter.addEventListener('change', async () => {
   totalExpenses.innerHTML = formatMoney(0);
   await getEntriesByYearAndMonth();
 });
+back.addEventListener('click', () => {
+  urlPush('dashboard');
+})
+

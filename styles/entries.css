@@ -124,3 +124,15 @@ tfoot #total-expenses {
     font-weight: 600;
     text-align: right;
 }
+
+#back {
+    display: inline-block;
+    color: #512da8;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 32px;
+}
+
+#back:hover {
+    cursor: pointer;
+}
