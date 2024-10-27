@@ -32,7 +32,7 @@ const expenseCategories = {
 }
 
 const currentDate = new Date();
-const currentMonth = currentDate.getMonth() + 1;
+const currentMonth = currentDate.getMonth();
 const userData = JSON.parse(localStorage.getItem('userData'));
 
 // HTML ELEMENTS
@@ -50,6 +50,7 @@ const avatar = document.getElementById('avatar');
 const preferences = document.getElementById('preferences');
 const totalIncome = document.getElementById('total-income');
 const balance = document.getElementById('balance');
+const goToEntries = document.getElementById('go-to-entries');
 let total = 0;
 
 if (userData) {
@@ -92,7 +93,7 @@ function calculateBalance() {
 
 async function getExpensesByMonth() {
   try {
-    const response = await fetch(`${API_URL}/expenses/${userData.id}/${currentMonth}`);
+    const response = await fetch(`${API_URL}/expenses/${userData.id}/${currentMonth + 1}`);
     const data = await response.json();
 
     calculateTotal(Object.entries(data));
@@ -159,4 +160,8 @@ preferences.addEventListener('mouseleave', () => {
 
 preferences.addEventListener('click', () => {
   urlPush('preferences');
+});
+
+goToEntries.addEventListener('click', () => {
+  urlPush('entries');
 });

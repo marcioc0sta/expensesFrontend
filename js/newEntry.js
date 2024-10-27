@@ -43,7 +43,6 @@ getCategories();
 
 function formatDate(date) {
   const [day, month, year] = date.split('/');
-  console.log(year, month, day);
   return `${year}-${month}-${day}`;
 }
 

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrant", sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    margin: 20px 0;
+    padding: 16px;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.filter-group {
+    width: 100%;
+}
+
+.filter-group select {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead th {
+    color: #512da8;
+    font-weight: 600;
+    text-align: left;
+    padding: 16px 0;
+}
+
+table tbody tr:hover, table tbody tr:nth-child(odd):hover {
+    background-color: #7a78d0;
+    color: #fff;
+    cursor: auto;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #b5b3ec;
+    color: #000;
+}
+
+table tbody td, table tfoot td {
+    padding: 12px 8px;
+}
+
+table tbody td.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+tbody .btn {
+    background-color: #b3b3b3;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+}
+
+tbody .btn:hover {
+    cursor: pointer;
+    background-color: #512da8;
+    transition: all 0.3s;
+}
+
+tbody .btn.btn-danger {
+    background-color: #ff5c5c;
+}
+
+tbody .btn.btn-danger:hover {
+    background-color: #ff0000;
+}
+
+tfoot {
+    background-color: #7359b2;
+    color: #fff;
+}
+
+tfoot #total-expenses {
+    font-weight: 600;
+    text-align: right;
+}
