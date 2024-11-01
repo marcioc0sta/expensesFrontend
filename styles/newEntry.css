@@ -39,7 +39,7 @@ form button {
   background-color: #512da8;
   color: #fff;
   font-size: 12px;
-  padding: 10px 45px;
+  padding: 10px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-weight: 600;
@@ -68,6 +68,10 @@ form button:hover {
   color: #512da8;
   font-size: 14px;
   text-decoration: none;
+}
+
+.formgroup.actions a:hover {
+  cursor: pointer;
 }
 
 .formgroup label {
@@ -118,4 +122,10 @@ form button:hover {
   cursor: pointer;
   color: #512da8;
   text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  form button {
+    padding: 10px 45px;
+  }
 }

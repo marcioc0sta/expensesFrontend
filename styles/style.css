@@ -54,7 +54,7 @@ body {
     background-color: #512da8;
     color: #fff;
     font-size: 12px;
-    padding: 10px 45px;
+    padding: 8px;
     border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
@@ -75,7 +75,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 16px;
     height: 100%;
 }
 
@@ -223,3 +223,14 @@ body {
 .container.active .toggle-right {
     transform: translateX(200%);
 }
+
+@media screen and (min-width: 768px) {
+    .container form {
+        padding: 0 40px;
+    }
+
+    .container button {
+        padding: 10px 45px;
+    }
+}
+

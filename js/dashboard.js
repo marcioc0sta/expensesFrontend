@@ -52,6 +52,8 @@ const preferences = document.getElementById('preferences');
 const totalIncome = document.getElementById('total-income');
 const balance = document.getElementById('balance');
 const goToEntries = document.getElementById('go-to-entries');
+const config = document.getElementById('config');
+
 let total = 0;
 
 if (userData) {
@@ -145,24 +147,22 @@ populateAvatar();
 newEntry.addEventListener('click', () => {
     urlPush('newEntry');
 });
-
 logout.addEventListener('click', () => {
     localStorage.removeItem('userData');
     urlPush('index');
 });
-
 avatar.addEventListener('mouseover', () => {
   preferences.style.display = 'block';
 });
-
 preferences.addEventListener('mouseleave', () => {
   preferences.style.display = 'none';
 });
-
 preferences.addEventListener('click', () => {
   urlPush('preferences');
 });
-
 goToEntries.addEventListener('click', () => {
   urlPush('entries');
+});
+config.addEventListener('click', () => {
+  urlPush('preferences');
 });

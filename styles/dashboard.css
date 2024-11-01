@@ -42,6 +42,8 @@ body {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: all 0.3s;
+    width: 100%;
+    margin-bottom: 16px;
 }
 
 .actions button:hover {
@@ -57,7 +59,7 @@ body {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
-    margin-top: 16px;
+    margin: 16px 0;
     padding: 0
 }
 
@@ -70,11 +72,15 @@ body {
     margin-right: 8px;
 }
 
-.history{
+.history {
     float: right;
     color: #512da8;
     font-size: 16px;
     text-decoration: none;
+}
+
+.history span {
+    margin-right: 8px;
 }
 
 .mes{
@@ -83,11 +89,11 @@ body {
     margin: 16px 0;
 }
 
-.span-container{
+.span-container {
     letter-spacing: 0.5px;
     font-size: 20px;
     display: flex;
-    margin: 32px 0;
+    margin: 32px 0 8px 0;
 }
 
 .expenses {
@@ -108,8 +114,8 @@ body {
     padding: 30px;
     justify-content: center;
     text-align: center;
-    width: calc(33% - 16px);
-    margin: 16px 0;
+    width: 100%;
+    margin: 8px 0;
 }
 
 
@@ -131,6 +137,7 @@ body {
 .actions {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 36px;
 }
@@ -138,8 +145,29 @@ body {
 .title-box {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     position: relative;
+    width: 100%;
+}
+
+.title-box a {
+    color: #717171;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 8px 0 0;
+    transition: all 0.3s;
+}
+
+.title-box a:hover {
+    color: #512da8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.title-box a span {
+    margin-right: 8px;
 }
 
 .title-box .avatar {
@@ -168,6 +196,7 @@ body {
     width: 40px;
     margin-right: 16px;
     position: absolute;
+    top: 0;
     z-index: 999;
 }
 
@@ -179,9 +208,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 0;
     padding: 0;
-    text-align: right;
+    text-align: left;
+    width: 100%;
+    margin-top: 16px;
 }
 
 .income .fa {
@@ -203,6 +233,37 @@ body {
 .header {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 32px;
+}
+
+.header h2 {
+    width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    .income {
+        width: 300px;
+        margin-top: 0;
+        text-align: right;
+    }
+    .title-box {
+        width: 340px;
+    }
+    .title-box a {
+        margin: 4px 0 0 60px;
+    }
+    .actions button {
+        margin-bottom: 0;
+        width: auto;
+    }
+    .expenses .expense-card {
+        margin: 16px 0;
+        width: calc(33% - 16px);
+    }
+
+    .span-container {
+        margin: 32px 0 0 8px;
+    }
 }
