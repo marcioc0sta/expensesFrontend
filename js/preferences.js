@@ -17,6 +17,24 @@ async function SubmitPreferences () {
   const emailV = email.value;
   const incomeV = income.value;
 
+  if (!emailV) {
+    error.classList.add('active');
+    error.textContent = 'Email é um campo obrigatório';
+    return
+  }
+
+  if (!nameV) {
+    error.classList.add('active');
+    error.textContent = 'Nome é um campo obrigatório';
+    return
+  }
+
+  if (!incomeV) {
+    error.classList.add('active');
+    error.textContent = 'Renda mensal é um campo obrigatório';
+    return
+  }
+
   const response = await fetch(`${API_URL}/users`, {
     method: 'PUT',
     headers: {
@@ -37,6 +55,7 @@ async function SubmitPreferences () {
     error.classList.add('active');
   } else {
     successMessage.classList.add('active');
+    error.classList.remove('active');
     localStorage.setItem('userData', JSON.stringify(data));
   }
 }
