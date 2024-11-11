@@ -16,6 +16,7 @@ async function SubmitPreferences () {
   const last_nameV = lastName.value;
   const emailV = email.value;
   const incomeV = income.value;
+  successMessage.classList.remove('active');
 
   if (!emailV) {
     error.classList.add('active');
